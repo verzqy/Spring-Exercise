@@ -23,7 +23,7 @@ public class EmployeeControllerTest {
 
 	@Test
 	public void postEmployee() throws Exception {
-		this.mockMvc.perform(post("/employees").content("{\"id\":\"1234\",\"name\":\"male\"}")
+		this.mockMvc.perform(post("/employees").content("{\"id\":\"1234\",\"name\":\"budi\",\"gender\":\"male\"}")
 				.contentType("application/json"))
 				.andExpect(status().isOk());
 
