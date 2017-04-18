@@ -1,6 +1,7 @@
 package com.mitrais.train.spring;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
+	@RequestMapping(value="/jsphello")
+	public String hello(ModelMap modelMap) {
+	    modelMap.addAttribute("message", "Hello Spring from JSP");
+	    return "hello";
+	}
+	
     @RequestMapping(value="/hello", method=RequestMethod.GET)
     @ResponseBody
     public String getHello(@RequestParam(value = "message", defaultValue = "Hello Spring")

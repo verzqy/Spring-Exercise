@@ -28,4 +28,9 @@ public class EmployeeControllerTest {
 				.andExpect(status().isOk());
 
 	}
+	
+	@Test
+	public void getEmployeeNotFound() throws Exception {
+		this.mockMvc.perform(get("/employees/budi")).andExpect(status().isNotFound());
+	}
 }
